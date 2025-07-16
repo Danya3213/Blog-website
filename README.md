@@ -1,12 +1,44 @@
-# React + Vite
+# Blog website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Blog website - це сучасна мультикатегорійна платформа, що об’єднує найактуальніші новини, події, технології, спорт, розваги, погоду та спільноту в одному стильному інтерфейсі. Сайт має яскравий, живий дизайн з акцентом на візуальний контент, що відразу привертає увагу користувача.
 
-Currently, two official plugins are available:
+## Про проєкт
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Цей проєкт є інтернет-магазином меблів з можливістю перегляду каталогу товарів, додавання до кошика, оформлення замовлення, читання та публікації відгуків, а також ознайомлення з акціями, умовами доставки та оплати.
 
-## Expanding the ESLint configuration
+## Структура проєкту
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **/src/Layout/** — багаторазові компоненти (Header, Footer)
+- **/src/Pages/** — сторінки сайту
+- **/src/assets/** — файли, що не є безпосередньою частиною коду програми
+- **/src/Styles/** — SCSS-утиліти
+- **/public/** — статичні файли та іконки
+
+## Для запуску проєкту потрібно
+
+1. Встановіть залежності:
+
+   ```bash
+   npm install
+   ```
+
+2. Запустіть проєкт:
+
+   ```bash
+   npm run dev
+   ```
+
+
+3. Збірка проєкту для продакшену:
+
+   ```bash
+   npm run build
+   ```
+
+## Використані технології
+
+- Vite
+- React
+- React routes
+- React swiper
+- SASS(SCSS)
