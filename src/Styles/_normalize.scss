@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 500;
+  list-style: none;
+  color: #000000;
+  text-decoration: none;
+}
+
+body {
+  background-color: #ffffff;
+  //overflow-x: hidden;
+}
+
+img {
+
+  user-select: none;
+}
