@@ -3,6 +3,7 @@ import {Main} from "./Pages/Main/Main.jsx";
 import {useEffect} from "react";
 import './Styles/_fonts.scss'
 import './Styles/_normalize.scss';
+import { Header } from './Components/Header/Header.jsx';
 
 export default function App() {
 
@@ -18,10 +19,12 @@ export default function App() {
     }, []);
 
     return (
-
-        <Routes>
-            <Route path="/" element={<Main/>}/>
-            <Route path="/main" element={<Main/>}/>
-        </Routes>
+        <>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Main/>}/>
+                <Route path="/main" element={<Main/>}/>
+            </Routes>
+        </>
     )
 }

@@ -1,0 +1,132 @@
+@import '../../Styles/_variables.scss';
+
+$header-height: 40px;
+
+%flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.headerLogoText {
+  @extend %flex-center;
+  color: rgb(252, 67, 8);
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26px;
+  height: $header-height;
+}
+
+.headerNavItemText {
+  @extend %flex-center;
+  color: rgb(62, 50, 50);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: left;
+  text-transform: capitalize;
+  height: $header-height;
+}
+
+.headerNavList {
+  @extend %flex-center;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.headerList {
+  @extend %flex-center;
+  flex-direction: row;
+  gap: 100px;
+  justify-content: space-around;
+  width: 100%;
+}
+
+header {
+  @extend %flex-center;
+  height: $header-height;
+  margin: 45px 0 !important;
+  padding-top: 0 !important;
+}
+
+.headerList,
+.headerNavList,
+.headerListItem,
+.headerNavItem {
+  @extend %flex-center;
+  height: $header-height;
+}
+
+.headerSearchBarInput,
+.headerSearchBarInputDiv {
+  @extend %flex-center;
+  border-radius: 12px;
+  background: $gray;
+  border: none;
+}
+
+.headerSearchBarInput {
+  color: #333;
+  height: $header-height;
+  &::placeholder {
+    color: #333;
+  }
+  &.form-control {
+    height: $header-height !important;
+    line-height: $header-height !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.headerSearchButton {
+  @extend %flex-center;
+  border: none;
+  height: $header-height;
+  &.btn {
+    height: $header-height !important;
+    line-height: $header-height !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.headerGrayButton {
+  background: $gray;
+  color: #333;
+  border: none;
+  margin-left: 6px;
+  transition: background 0.2s;
+}
+.headerGrayButton:hover {
+  background: #e0e0e0;
+  color: #222;
+}
+
+.headerRegButton {
+  background: #e0e0e0;
+  color: #333;
+}
+.headerRegButton:hover {
+  background: #cccccc;
+}
+
+.headerAccountShit {
+  margin-left: 10px;
+  @extend %flex-center;
+  gap: 10px;
+  .btn {
+    height: $header-height !important;
+    line-height: $header-height !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    @extend %flex-center;
+  }
+}
+
+.headerSearchBarInputDiv {
+  @extend %flex-center;
+  height: $header-height;
+}
