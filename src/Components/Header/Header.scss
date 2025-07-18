@@ -1,4 +1,4 @@
-@import '../../Styles/_variables.scss';
+@use '../../Styles/variables' as *;
 
 $header-height: 40px;
 
