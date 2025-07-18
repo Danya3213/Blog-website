@@ -9,19 +9,28 @@ import { Container } from "../Container/Container";
 
 export function Header() {
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
-  const pagesRef = useRef(null);
 
   useEffect(() => {
+    if (!pagesDropdownOpen) return;
+
     function handleClickOutside(event) {
-      if (pagesRef.current && !pagesRef.current.contains(event.target)) {
+      const dropdown = document.querySelector('.headerNavItemText.headerNavDropdownToggle');
+      const dropdownMenu = document.querySelector('.headerNavDropdown');
+      if (
+        dropdown &&
+        !dropdown.contains(event.target) &&
+        dropdownMenu &&
+        !dropdownMenu.contains(event.target)
+      ) {
         setPagesDropdownOpen(false);
       }
     }
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [pagesDropdownOpen]);
 
   return (
     <header>
@@ -40,7 +49,7 @@ export function Header() {
                   </h5>
                 </li>
 
-                <li className="headerNavItem" ref={pagesRef}>
+                <li className="headerNavItem">
                   <div className="headerNavItemText headerNavDropdownToggle" onClick={() => setPagesDropdownOpen((v) => !v)}>
                     Pages <IoIosArrowDown />
                   </div>
