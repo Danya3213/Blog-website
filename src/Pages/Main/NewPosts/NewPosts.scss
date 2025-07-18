@@ -1,4 +1,7 @@
 .new-posts {
+  width: 1512px;
+  margin: 0 auto;
+
   &__box {
     display: flex;
     justify-content: space-between;
@@ -38,6 +41,12 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
+    text-decoration: none;
+    transition: all 500ms;
+
+    &:hover {
+      background: #e0e0e0;
+    }
   }
 
   &__arrow {
@@ -53,6 +62,7 @@
     width: 1512px;
 
     margin: 30px 0 0 0;
+    padding: 0;
   }
 
   &__item {
@@ -96,7 +106,6 @@
     width: 362px;
     height: 41px;
     padding: 0px 16px 26px 6px;
-    margin: 0 0 26px 0;
 
     display: flex;
     flex: 1 0 0;
@@ -161,6 +170,7 @@
     font-weight: 500;
     line-height: 22px;
     letter-spacing: 0.1px;
+    text-decoration: none;
   }
 
   &__date {
@@ -183,5 +193,33 @@
     text-align: center;
     font-size: 20px;
     font-weight: 400;
+  }
+}
+
+.bookmarkIcon {
+  & {
+    path {
+      transition: all 500ms;
+    }
+  }
+
+  &:hover {
+    path {
+      fill: rgba(62, 50, 50, 0.5);
+    }
+  }
+}
+
+.savedBookmarkIcon {
+  & {
+    path {
+      transition: all 500ms;
+    }
+  }
+
+  &:hover {
+    path {
+      fill: #3e3232;
+    }
   }
 }
