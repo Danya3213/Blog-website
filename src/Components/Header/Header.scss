@@ -1,5 +1,6 @@
 @use '../../Styles/variables' as *;
 
+// Переменные и плейсхолдеры
 $header-height: 40px;
 
 %flex-center {
@@ -7,6 +8,7 @@ $header-height: 40px;
   align-items: center;
 }
 
+// Логотип
 .headerLogoText {
   @extend %flex-center;
   color: rgb(252, 67, 8);
@@ -15,8 +17,28 @@ $header-height: 40px;
   font-weight: 700;
   line-height: 26px;
   height: $header-height;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgb(252, 67, 8);
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
 }
 
+// Навигация
 .headerNavItemText {
   @extend %flex-center;
   color: rgb(62, 50, 50);
@@ -27,6 +49,28 @@ $header-height: 40px;
   text-align: left;
   text-transform: capitalize;
   height: $header-height;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgb(62, 50, 50);
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 .headerNavList {
@@ -44,13 +88,6 @@ $header-height: 40px;
   width: 100%;
 }
 
-header {
-  @extend %flex-center;
-  height: $header-height;
-  margin: 45px 0 !important;
-  padding-top: 0 !important;
-}
-
 .headerList,
 .headerNavList,
 .headerListItem,
@@ -59,9 +96,22 @@ header {
   height: $header-height;
 }
 
-.headerSearchBarInput,
+.headerNavItem {
+  position: relative;
+}
+
+// Header (контейнер)
+header {
+  @extend %flex-center;
+  height: $header-height;
+  margin: 45px 0 !important;
+  padding-top: 0 !important;
+}
+
+// Поиск
 .headerSearchBarInputDiv {
   @extend %flex-center;
+  height: $header-height;
   border-radius: 12px;
   background: $gray;
   border: none;
@@ -70,6 +120,9 @@ header {
 .headerSearchBarInput {
   color: #333;
   height: $header-height;
+  border-radius: 12px;
+  background: $gray;
+  border: none;
   &::placeholder {
     color: #333;
   }
@@ -93,24 +146,25 @@ header {
   }
 }
 
+// Кнопки
 .headerGrayButton {
   background: $gray;
   color: #333;
   border: none;
   margin-left: 6px;
   transition: background 0.2s;
-}
-.headerGrayButton:hover {
-  background: #e0e0e0;
-  color: #222;
+  &:hover {
+    background: #e0e0e0;
+    color: #222;
+  }
 }
 
 .headerRegButton {
   background: #e0e0e0;
   color: #333;
-}
-.headerRegButton:hover {
-  background: #cccccc;
+  &:hover {
+    background: #cccccc;
+  }
 }
 
 .headerAccountShit {
@@ -126,7 +180,43 @@ header {
   }
 }
 
-.headerSearchBarInputDiv {
-  @extend %flex-center;
-  height: $header-height;
+// Выпадашка
+.headerNavDropdownToggle {
+  position: relative;
+  user-select: none;
 }
+
+.headerNavDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 140px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 8px 0;
+  z-index: 10;
+  margin-top: -5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerNavDropdownItem {
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  color: rgb(62, 50, 50);
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+  background: none;
+  text-align: left;
+  &:hover {
+    background: #f5f5f5;
+    color: rgb(252, 67, 8);
+  }
+}
+// че за хуйню я написал

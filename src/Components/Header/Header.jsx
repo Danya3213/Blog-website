@@ -1,13 +1,37 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./Header.scss";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
-import Container from "../Container/Container";
+import { Container } from "../Container/Container";
 
 
 export function Header() {
+  const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    if (!pagesDropdownOpen) return;
+
+    function handleClickOutside(event) {
+      const dropdown = document.querySelector('.headerNavItemText.headerNavDropdownToggle');
+      const dropdownMenu = document.querySelector('.headerNavDropdown');
+      if (
+        dropdown &&
+        !dropdown.contains(event.target) &&
+        dropdownMenu &&
+        !dropdownMenu.contains(event.target)
+      ) {
+        setPagesDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [pagesDropdownOpen]);
+
   return (
     <header>
       <Container>
@@ -26,9 +50,16 @@ export function Header() {
                 </li>
 
                 <li className="headerNavItem">
-                  <h5 className="headerNavItemText">
+                  <div className="headerNavItemText headerNavDropdownToggle" onClick={() => setPagesDropdownOpen((v) => !v)}>
                     Pages <IoIosArrowDown />
-                  </h5>
+                  </div>
+                  {pagesDropdownOpen && (
+                    <ul className="headerNavDropdown">
+                      <li className="headerNavDropdownItem">404</li>
+                      <li className="headerNavDropdownItem">page 1</li>
+                      <li className="headerNavDropdownItem">page 2</li>
+                    </ul>
+                  )}
                 </li>
 
                 <li className="headerNavItem">
