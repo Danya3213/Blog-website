@@ -6,6 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import Container from "../Container/Container";
 
+
 export function Header() {
   return (
     <header>
@@ -43,13 +44,11 @@ export function Header() {
 
           <li className="headerListItem headerSearchBar">
             <div className="headerSearchBarInputDiv">
-              <input
-                type="text"
+              <input type="text"
                 className="form-control headerSearchBarInput"
                 placeholder="Search anything"
                 aria-label="Search anything"
-                aria-describedby="button-addon2"
-              ></input>
+                aria-describedby="button-addon2"></input>
               <button
                 className="btn btn-outline-secondary headerSearchButton"
                 type="button"
