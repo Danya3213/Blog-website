@@ -1,4 +1,7 @@
 import { useState } from "react";
+
+// import { Container } from "../../../Components/Container/Container";
+
 import { IoIosArrowForward } from "react-icons/io";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
 
@@ -103,7 +106,6 @@ export const NewPosts = () => {
 
   return (
     <section className="new-posts">
-      <div className="container new-posts__container">
         <div className="new-posts__box">
           <h2 className="new-posts__title">New Posts</h2>
           <a className="new-posts__more" href="#">
@@ -142,9 +144,9 @@ export const NewPosts = () => {
                     onClick={() => handleSavePost(post.id)}
                   >
                     {post.isSaved ? (
-                      <FaBookmark style={{ fill: "#3E3232" }} />
+                      <FaBookmark className="bookmarkIcon" style={{ fill: "#3E3232" }}/>
                     ) : (
-                      <FaRegBookmark style={{ fill: "rgba(62, 50, 50, 0.50)" }} />
+                      <FaRegBookmark className="savedBookmarkIcon" style={{ fill: "rgba(62, 50, 50, 0.50)" }} />
                     )}
                   </button>
                 </div>
@@ -152,7 +154,6 @@ export const NewPosts = () => {
             </li>
           ))}
         </ul>
-      </div>
     </section>
   );
 };
