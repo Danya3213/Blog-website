@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// import { Container } from "../../../Components/Container/Container";
+import { Container } from "../../../Components/Container/Container";
 
 import { IoIosArrowForward } from "react-icons/io";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
@@ -106,6 +106,7 @@ export const NewPosts = () => {
 
   return (
     <section className="new-posts">
+      <Container>
         <div className="new-posts__box">
           <h2 className="new-posts__title">New Posts</h2>
           <a className="new-posts__more" href="#">
@@ -154,6 +155,7 @@ export const NewPosts = () => {
             </li>
           ))}
         </ul>
+      </Container>
     </section>
   );
 };
