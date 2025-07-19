@@ -56,8 +56,9 @@
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 744px);
+     grid-template-rows: repeat(3, 210px);
     gap: 24px;
     width: 1512px;
 
