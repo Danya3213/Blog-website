@@ -13,11 +13,12 @@ $header-height: 40px;
   @extend %flex-center;
   color: rgb(252, 67, 8);
   font-family: "Roboto", sans-serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
-  line-height: 26px;
+  line-height: 32px;
   height: $header-height;
   position: relative;
+  transition: font-size 0.2s, line-height 0.2s;
 
   &::after {
     content: '';
@@ -43,9 +44,9 @@ $header-height: 40px;
   @extend %flex-center;
   color: rgb(62, 50, 50);
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 19px;
+  line-height: 24px;
   text-align: left;
   text-transform: capitalize;
   height: $header-height;
@@ -53,6 +54,7 @@ $header-height: 40px;
   cursor: pointer;
   margin: 0;
   padding: 0;
+  transition: font-size 0.2s, line-height 0.2s;
 
   &::after {
     content: '';
@@ -76,8 +78,9 @@ $header-height: 40px;
 .headerNavList {
   @extend %flex-center;
   flex-direction: row;
-  gap: 20px;
+  gap: 32px;
   justify-content: space-around;
+  transition: gap 0.2s;
 }
 
 .headerList {
@@ -86,6 +89,7 @@ $header-height: 40px;
   gap: 100px;
   justify-content: space-around;
   width: 100%;
+  transition: gap 0.2s;
 }
 
 .headerList,
@@ -106,6 +110,7 @@ header {
   height: $header-height;
   margin: 45px 0 !important;
   padding-top: 0 !important;
+  transition: margin 0.2s, height 0.2s;
 }
 
 // Поиск
@@ -115,6 +120,7 @@ header {
   border-radius: 12px;
   background: $gray;
   border: none;
+  transition: height 0.2s;
 }
 
 .headerSearchBarInput {
@@ -123,6 +129,8 @@ header {
   border-radius: 12px;
   background: $gray;
   border: none;
+  font-size: 16px;
+  transition: height 0.2s, font-size 0.2s;
   &::placeholder {
     color: #333;
   }
@@ -138,6 +146,7 @@ header {
   @extend %flex-center;
   border: none;
   height: $header-height;
+  transition: height 0.2s;
   &.btn {
     height: $header-height !important;
     line-height: $header-height !important;
@@ -152,7 +161,8 @@ header {
   color: #333;
   border: none;
   margin-left: 6px;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s, font-size 0.2s, padding 0.2s;
+  font-size: 18px;
   &:hover {
     background: #e0e0e0;
     color: #222;
@@ -162,6 +172,8 @@ header {
 .headerRegButton {
   background: #e0e0e0;
   color: #333;
+  font-size: 18px;
+  transition: background 0.2s, font-size 0.2s, padding 0.2s;
   &:hover {
     background: #cccccc;
   }
@@ -220,3 +232,367 @@ header {
   }
 }
 // че за хуйню я написал
+
+// --- Мобильный хедер и бургер ---
+.headerMobileBar {
+  display: none;
+}
+.burgerButton {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #222;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  z-index: 2000;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.35s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.mobileMenu {
+  background: #fff;
+  width: 80vw;
+  max-width: 320px;
+  height: 100vh;
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.35s;
+  position: relative;
+  z-index: 2100;
+  -webkit-overflow-scrolling: touch;
+}
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.closeMobileMenu {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #222;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.mobileNavItem {
+  font-size: 1.1rem;
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.mobileSearch {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.mobileSearch input {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  padding: 6px 10px;
+  font-size: 1rem;
+}
+.mobileSearch .btn {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: #222;
+  min-width: 44px;
+  min-height: 44px;
+}
+.mobileAuth {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.mobileDropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-radius: 0 0 12px 12px;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  animation: fadeIn 0.2s;
+}
+.mobileDropdownItem {
+  padding: 14px 0 14px 24px;
+  font-size: 1.2rem;
+  color: #222;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mobileDropdownItem:last-child {
+  border-bottom: none;
+}
+.mobileDropdownItem:hover {
+  background: #f5f5f5;
+  color: #ff6600;
+}
+
+// --- Скрытие обычного хедера на мобилках ---
+@media (max-width: 768px) {
+  .headerList {
+    display: none;
+  }
+  .headerMobileBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 0;
+  }
+}
+
+// Планшеты (до 1024px)
+@media (max-width: 1024px) {
+  .headerList {
+    gap: 40px;
+  }
+  .headerNavList {
+    gap: 10px;
+  }
+  .headerLogoText {
+    font-size: 24px;
+  }
+  .headerNavItemText {
+    font-size: 18px;
+  }
+  .headerSearchBarInputDiv {
+    height: 32px;
+  }
+  .headerSearchBarInput {
+    height: 32px;
+    font-size: 14px;
+  }
+  .headerSearchButton {
+    height: 32px;
+  }
+  .headerAccountShit {
+    gap: 6px;
+    .btn {
+      height: 32px !important;
+      font-size: 14px;
+    }
+  }
+}
+
+// Телефоны (до 480px)
+@media (max-width: 480px) {
+  header {
+    margin: 0 !important;
+    height: 70px !important;
+    min-height: 70px !important;
+    padding: 0 !important;
+  }
+  .headerMobileBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 12px;
+    position: relative;
+    background: #fff;
+    min-height: 70px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    z-index: 10;
+    gap: 18px;
+  }
+  .headerLogoText {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    position: static;
+    left: unset;
+    right: unset;
+    top: unset;
+    transform: none;
+    z-index: 2;
+    display: block;
+    flex: 1 1 auto;
+  }
+  .burgerButton {
+    position: static;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    z-index: 3;
+    width: 60px;
+    min-width: 60px;
+    font-size: 2.8rem;
+    flex: 0 0 60px;
+  }
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .mobileNavList {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+  }
+  .mobileNavItem {
+    text-align: center;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .mobileAuth {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .mobileAuth .btn {
+    flex: 1 1 0;
+    margin: 0 4px;
+    text-align: center;
+  }
+}
+
+// --- Крупные шрифты для десктопа ---
+.headerLogoText {
+  font-size: 28px;
+  line-height: 32px;
+}
+.headerNavItemText {
+  font-size: 20px;
+}
+.headerNavDropdownItem {
+  font-size: 18px;
+}
+.headerGrayButton, .headerRegButton {
+  font-size: 18px;
+}
+
+// --- Крупные шрифты для мобильного меню ---
+.mobileNavItem {
+  font-size: 1.3rem;
+}
+.mobileSearch input {
+  font-size: 1.1rem;
+}
+.mobileSearch .btn {
+  font-size: 1.5rem;
+}
+.mobileAuth .btn {
+  font-size: 1.1rem;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+// --- Крупные шрифты для планшетов и телефонов ---
+@media (max-width: 1024px) {
+  .headerLogoText {
+    font-size: 40px;
+  }
+  .headerNavItemText {
+    font-size: 18px;
+  }
+  .headerNavDropdownItem {
+    font-size: 16px;
+  }
+  .headerGrayButton, .headerRegButton {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .headerLogoText {
+    font-size: 60px;
+  }
+  .headerNavItemText {
+    font-size: 16px;
+  }
+  .headerNavDropdownItem {
+    font-size: 15px;
+  }
+  .headerGrayButton, .headerRegButton {
+    font-size: 15px;
+  }
+  .burgerButton {
+    width: 70px;
+    min-width: 70px;
+    font-size: 3.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .headerLogoText {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .headerNavItemText {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .headerNavDropdownItem {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .headerGrayButton, .headerRegButton {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px 18px;
+  }
+  .mobileNavItem {
+    font-size: 1.7rem;
+    font-weight: 700;
+  }
+  .mobileSearch input {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  .mobileSearch .btn {
+    font-size: 2rem;
+  }
+  .mobileAuth .btn {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+}
