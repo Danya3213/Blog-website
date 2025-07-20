@@ -384,10 +384,10 @@ header {
     gap: 10px;
   }
   .headerLogoText {
-    font-size: 24px;
+    font-size: 18px;
   }
   .headerNavItemText {
-    font-size: 18px;
+    font-size: 13px;
   }
   .headerSearchBarInputDiv {
     height: 32px;
@@ -529,16 +529,16 @@ header {
 // --- Крупные шрифты для планшетов и телефонов ---
 @media (max-width: 1024px) {
   .headerLogoText {
-    font-size: 40px;
+    font-size: 24px;
   }
   .headerNavItemText {
-    font-size: 18px;
+    font-size: 15px;
   }
   .headerNavDropdownItem {
-    font-size: 16px;
+    font-size: 14px;
   }
   .headerGrayButton, .headerRegButton {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media (max-width: 768px) {
