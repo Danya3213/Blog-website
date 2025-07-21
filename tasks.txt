@@ -2,7 +2,6 @@
 - Header
 - Footer
 - Weather
-- Top posts
 
 @HELLPER7788 
 - Top tags
@@ -12,3 +11,4 @@
 @ArchiPank 
 - Latest videos
 - New posts 
+- Top posts
