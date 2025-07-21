@@ -19,8 +19,6 @@ export default function App() {
   return (
     <>
       <Header />
-      <Weather />
-
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/main" element={<Main />} />

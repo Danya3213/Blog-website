@@ -1,4 +1,5 @@
 import { NewPosts } from "./NewPosts/NewPosts";
+import { Weather } from "../../Components/Weather/Weather";
 
 export const Main = () => {
 
@@ -6,6 +7,7 @@ export const Main = () => {
         <>
             <h3>Main page</h3>
             <NewPosts />
+            <Weather />
         </>
     );
 };
