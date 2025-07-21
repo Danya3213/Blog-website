@@ -27,7 +27,7 @@ const cities = [
     precipitation: '0%',
     humidity: '41%',
     wind: '27 Km/H',
-    icon: <WiDaySunny size={48} color="#fff" />, // белый для контраста
+    icon: <WiDaySunny size={48} color="#fff" />,
     bg: 'linear-gradient(135deg, #FF9800 0%, #FF5722 100%)',
   },
   {
@@ -37,7 +37,7 @@ const cities = [
     precipitation: '13%',
     humidity: '52%',
     wind: '12 Km/H',
-    icon: <WiRain size={48} color="#fff" />, // белый для контраста
+    icon: <WiRain size={48} color="#fff" />,
     bg: 'linear-gradient(135deg, #2196F3 0%, #00BCD4 100%)',
   },
   {
@@ -47,7 +47,7 @@ const cities = [
     precipitation: '7%',
     humidity: '59%',
     wind: '18 Km/H',
-    icon: <WiDaySunny size={48} color="#fff" />, // белый для контраста
+    icon: <WiDaySunny size={48} color="#fff" />,
     bg: 'linear-gradient(135deg, #43EA5B 0%, #1CB5E0 100%)',
   },
   {
@@ -57,7 +57,7 @@ const cities = [
     precipitation: '10%',
     humidity: '47%',
     wind: '14 Km/H',
-    icon: <WiNightAltCloudy size={48} color="#fff" />, // белый для контраста
+    icon: <WiNightAltCloudy size={48} color="#fff" />, 
     bg: 'linear-gradient(135deg, #B721FF 0%, #21D4FD 100%)',
   },
 ];
@@ -71,9 +71,10 @@ export function Weather() {
       const ctx = chartRef.current.getContext('2d');
       if (chartInstanceRef.current) chartInstanceRef.current.destroy();
       const isMobile = window.innerWidth <= 480;
-      const lineWidth = isMobile ? 3 : 3;
-      const labelFontSize = isMobile ? 14 : 18;
-      const xTickFontSize = isMobile ? 12 : 16;
+      const isFold = window.innerWidth > 480 && window.innerWidth <= 900;
+      const lineWidth = isMobile || isFold ? 2 : 3;
+      const labelFontSize = isMobile ? 12 : isFold ? 13 : 18;
+      const xTickFontSize = isMobile ? 10 : isFold ? 12 : 16;
       chartInstanceRef.current = new Chart(ctx, {
         type: 'line',
         data: {

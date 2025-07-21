@@ -1,8 +1,12 @@
-export const Main = () => {
+import { Weather } from "../../Components/Weather/Weather";
+// import NewPost??
 
-    return (
-        <>
-            <h3>Main page</h3>
-        </>
-    );
+export const Main = () => {
+  return (
+    <>
+      <h3>Main page</h3>
+      {/* <NewPosts /> */}
+      <Weather />
+    </>
+  );
 };

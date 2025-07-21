@@ -19,6 +19,8 @@ $header-height: 40px;
   height: $header-height;
   position: relative;
   transition: font-size 0.2s, line-height 0.2s;
+  white-space: nowrap;
+  align-self: flex-start;
 
   &::after {
     content: '';
@@ -55,6 +57,7 @@ $header-height: 40px;
   margin: 0;
   padding: 0;
   transition: font-size 0.2s, line-height 0.2s;
+  white-space: nowrap;
 
   &::after {
     content: '';
@@ -508,6 +511,7 @@ header {
 }
 .headerGrayButton, .headerRegButton {
   font-size: 18px;
+  white-space: nowrap;
 }
 
 // --- Крупные шрифты для мобильного меню ---
@@ -595,4 +599,19 @@ header {
     font-weight: 700;
   }
 
+}
+@media (max-width: 1200px) {
+  .headerLogoText {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .headerNavItemText {
+    font-size: 14px;
+  }
+  .headerNavDropdownItem {
+    font-size: 13px;
+  }
+  .headerGrayButton, .headerRegButton {
+    font-size: 13px;
+  }
 }
