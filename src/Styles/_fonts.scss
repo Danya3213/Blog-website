@@ -1,16 +1,23 @@
 @font-face {
 
-  font-family: "PT Sans";
-  src: url("../assets/fonts/PTSans-Regular.woff2") format("woff2");
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
 
-  font-family: "PT Sans";
-  src: url("../assets/fonts/PTSans-Bold.woff2") format("woff2");
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Medium.woff2") format("woff2");
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+@font-face {
+
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
