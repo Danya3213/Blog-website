@@ -146,8 +146,8 @@ export function Weather() {
   const minutes = now.getMinutes().toString().padStart(2, '0');
 
   return (
-    <Container className={styles.weatherContainer}>
-      <section className={styles.weatherWidget}>
+    <Container className={`${styles.weatherContainer} ${styles.weatherWidget} ${styles.Container}`}>
+      {/* <section className={styles.weatherWidget}> */}
         <div className={styles.weatherInner}>
           <div className={styles.leftBlock}>
             {/* Левая часть — как было */}
@@ -210,7 +210,7 @@ export function Weather() {
             ))}
           </div>
         </div>
-      </section>
+      {/* </section> */}
     </Container>
   );
 }
