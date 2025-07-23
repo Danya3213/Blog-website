@@ -146,71 +146,133 @@ export function Weather() {
   const minutes = now.getMinutes().toString().padStart(2, '0');
 
   return (
-    <Container className={`${styles.weatherContainer} ${styles.weatherWidget} ${styles.Container}`}>
-      {/* <section className={styles.weatherWidget}> */}
-        <div className={styles.weatherInner}>
-          <div className={styles.leftBlock}>
-            {/* Левая часть — как было */}
-            <div className={styles.weatherHeader}>
-              <div className={styles.weatherMain}>
-                <WiDaySunny size={64} color="#FCC54C" />
-                <div>
-                  <div className={styles.tempMain}>29°<span>C</span></div>
-                  <div className={styles.weatherDetails}>
-                    <span><WiRaindrop size={20}/> Precipitation: 2%</span>
-                    <span><WiHumidity size={20}/> Humidity: 70%</span>
-                    <span><WiStrongWind size={20}/> Wind: 3 Km/H</span>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.weatherCity}>
-                <div>New York, NY</div>
-                <div>{dayName} {hours}:{minutes}</div>
-              </div>
+    <Container className={styles.weatherInner}>
+    <div className={`${styles.leftBlock} ${styles.Container}`}>
+      {/* Левая часть — как было */}
+      <div className={styles.weatherHeader}>
+        <div className={styles.weatherMain}>
+          <WiDaySunny size={64} color="#FCC54C" />
+          <div>
+            <div className={styles.tempMain}>29°<span>C</span></div>
+            <div className={styles.weatherDetails}>
+              <span><WiRaindrop size={20}/> Precipitation: 2%</span>
+              <span><WiHumidity size={20}/> Humidity: 70%</span>
+              <span><WiStrongWind size={20}/> Wind: 3 Km/H</span>
             </div>
-            <div className={styles.weatherChartBlock}>
-              <canvas
-                ref={chartRef}
-                className={styles.weatherChartCanvas}
-                style={{ width: '100%', height: '40vw', minHeight: 180, maxHeight: 300 }}
-              ></canvas>
-            </div>
-            <div className={styles.weatherWeek}>
-              {weekForecast.map((item, idx) => (
-                <div key={idx} className={styles.weatherDay + (idx === 0 ? ' ' + styles.active : '')}>
-                  <div className={styles.dayName}>{item.day}</div>
-                  <div className={styles.dayIcon}>{item.icon}</div>
-                  <div className={styles.dayMax}>{item.max}°</div>
-                  <div className={styles.dayMin}>{item.min}°</div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className={styles.rightBlock}>
-            {cities.map((city, idx) => (
-              <div
-                key={city.name}
-                className={styles.cityCard}
-                style={{ background: city.bg }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <div>
-                    <div style={{ fontSize: 13, color: '#fff', opacity: 0.9, marginBottom: 2 }}>Precipitation: {city.precipitation}</div>
-                    <div style={{ fontSize: 13, color: '#fff', opacity: 0.9, marginBottom: 2 }}>Humidity: {city.humidity}</div>
-                    <div style={{ fontSize: 13, color: '#fff', opacity: 0.9, marginBottom: 8 }}>Wind: {city.wind}</div>
-                    <div style={{ fontSize: 18, fontWeight: 700, color: '#fff' }}>{city.name}</div>
-                    <div style={{ fontSize: 13, color: '#fff', opacity: 0.9 }}>{city.time}</div>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    {city.icon}
-                    <div style={{ fontSize: 32, fontWeight: 700, color: '#fff', marginTop: 4 }}>{city.temp}°<span style={{ fontSize: 18 }}>C</span></div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
-      {/* </section> */}
-    </Container>
+        <div className={styles.weatherCity}>
+          <div>New York, NY</div>
+          <div>{dayName} {hours}:{minutes}</div>
+        </div>
+      </div>
+      <div className={styles.weatherChartBlock}>
+        <canvas
+          ref={chartRef}
+          className={styles.weatherChartCanvas}
+          style={{ width: '100%', height: '40vw', minHeight: 180, maxHeight: 300 }}
+        ></canvas>
+      </div>
+      <div className={styles.weatherWeek}>
+        {weekForecast.map((item, idx) => (
+          <div key={idx} className={styles.weatherDay + (idx === 0 ? ' ' + styles.active : '')}>
+            <div className={styles.dayName}>{item.day}</div>
+            <div className={styles.dayIcon}>{item.icon}</div>
+            <div className={styles.dayMax}>{item.max}°</div>
+            <div className={styles.dayMin}>{item.min}°</div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div className={styles.rightBlock}>
+      {cities.map((city, idx) => (
+        <div
+          key={city.name}
+          className={styles.cityCard}
+          style={{ background: city.bg }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            <div>
+              <div style={{ fontSize: 13, color: '#fff', opacity: 0.9, marginBottom: 2 }}>Precipitation: {city.precipitation}</div>
+              <div style={{ fontSize: 13, color: '#fff', opacity: 0.9, marginBottom: 2 }}>Humidity: {city.humidity}</div>
+              <div style={{ fontSize: 13, color: '#fff', opacity: 0.9, marginBottom: 8 }}>Wind: {city.wind}</div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: '#fff' }}>{city.name}</div>
+              <div style={{ fontSize: 13, color: '#fff', opacity: 0.9 }}>{city.time}</div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              {city.icon}
+              <div style={{ fontSize: 32, fontWeight: 700, color: '#fff', marginTop: 4 }}>{city.temp}°<span style={{ fontSize: 18 }}>C</span></div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+    // <Container className={`${styles.weatherContainer} ${styles.weatherWidget} ${styles.Container}`}>
+    //   {/* <section className={styles.weatherWidget}> */}
+    //     <Container className={styles.weatherInner}>
+    //       <div className={`${styles.leftBlock} ${styles.Container}`}>
+    //         {/* Левая часть — как было */}
+    //         <div className={styles.weatherHeader}>
+    //           <div className={styles.weatherMain}>
+    //             <WiDaySunny size={64} color="#FCC54C" />
+    //             <div>
+    //               <div className={styles.tempMain}>29°<span>C</span></div>
+    //               <div className={styles.weatherDetails}>
+    //                 <span><WiRaindrop size={20}/> Precipitation: 2%</span>
+    //                 <span><WiHumidity size={20}/> Humidity: 70%</span>
+    //                 <span><WiStrongWind size={20}/> Wind: 3 Km/H</span>
+    //               </div>
+    //             </div>
+    //           </div>
+    //           <div className={styles.weatherCity}>
+    //             <div>New York, NY</div>
+    //             <div>{dayName} {hours}:{minutes}</div>
+    //           </div>
+    //         </div>
+    //         <div className={styles.weatherChartBlock}>
+    //           <canvas
+    //             ref={chartRef}
+    //             className={styles.weatherChartCanvas}
+    //             style={{ width: '100%', height: '40vw', minHeight: 180, maxHeight: 300 }}
+    //           ></canvas>
+    //         </div>
+    //         <div className={styles.weatherWeek}>
+    //           {weekForecast.map((item, idx) => (
+    //             <div key={idx} className={styles.weatherDay + (idx === 0 ? ' ' + styles.active : '')}>
+    //               <div className={styles.dayName}>{item.day}</div>
+    //               <div className={styles.dayIcon}>{item.icon}</div>
+    //               <div className={styles.dayMax}>{item.max}°</div>
+    //               <div className={styles.dayMin}>{item.min}°</div>
+    //             </div>
+    //           ))}
+    //         </div>
+    //       </div>
+    //       <div className={styles.rightBlock}>
+    //         {cities.map((city, idx) => (
+    //           <div
+    //             key={city.name}
+    //             className={styles.cityCard}
+    //             style={{ background: city.bg }}
+    //           >
+    //             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+    //               <div>
+    //                 <div style={{ fontSize: 13, color: '#fff', opacity: 0.9, marginBottom: 2 }}>Precipitation: {city.precipitation}</div>
+    //                 <div style={{ fontSize: 13, color: '#fff', opacity: 0.9, marginBottom: 2 }}>Humidity: {city.humidity}</div>
+    //                 <div style={{ fontSize: 13, color: '#fff', opacity: 0.9, marginBottom: 8 }}>Wind: {city.wind}</div>
+    //                 <div style={{ fontSize: 18, fontWeight: 700, color: '#fff' }}>{city.name}</div>
+    //                 <div style={{ fontSize: 13, color: '#fff', opacity: 0.9 }}>{city.time}</div>
+    //               </div>
+    //               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    //                 {city.icon}
+    //                 <div style={{ fontSize: 32, fontWeight: 700, color: '#fff', marginTop: 4 }}>{city.temp}°<span style={{ fontSize: 18 }}>C</span></div>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </Container>
+    //   {/* </section> */}
+    // </Container>
   );
 }
