@@ -1,7 +1,7 @@
 @ByteMe6 
-- Header
+- Header 🟢
 - Footer
-- Weather
+- Weather 🟢
 
 @HELLPER7788 
 - Top tags
@@ -12,3 +12,8 @@
 - Latest videos
 - New posts 
 - Top posts
+
+emojies if you want to mark what you did --> 🟢🔴🟡
+🟢 - ready 100%
+🔴 - not ready at all(errors etc)
+🟡 - almost ready (no adaptation is this)
