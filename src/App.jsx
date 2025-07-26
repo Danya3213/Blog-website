@@ -5,6 +5,9 @@ import "./Styles/_fonts.scss";
 import "./Styles/_normalize.scss";
 import { Header } from "./Components/Header/Header.jsx";
 import { Weather } from "./Components/Weather/Weather.jsx";
+import { Footer } from "./Components/Container/Footer/Footer.jsx";
+
+
 
 export default function App() {
   const goToPage = useNavigate();
@@ -23,6 +26,7 @@ export default function App() {
         <Route path="/" element={<Main />} />
         <Route path="/main" element={<Main />} />
       </Routes>
+    <Footer />
     </>
   );
 }
