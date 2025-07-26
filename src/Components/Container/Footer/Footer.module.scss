@@ -1,0 +1,715 @@
+.footer {
+  background-color: #ffffff;
+  // padding: 40px 0 20px;
+  // padding: 0;
+  font-family: Roboto, sans-serif;
+  display: flex;
+  gap: 30px;
+  grid-template-areas: 
+    "content content content content"
+    "bottom bottom bottom bottom"
+    "footer-bottom footer-bottom footer-bottom footer-bottom";
+  
+  @media (max-width: 1024px) {
+    gap: 20px;
+    padding: 0 15px;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 10px;
+    padding: 0 5px;
+  }
+}
+
+.footerContent {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  width: 50%;
+  // background-color: #1a91da;
+  background: rgb(245, 245, 245);
+  border-radius: 0 40px 40px 0;
+  padding: 30px;
+  
+  @media (max-width: 1024px) {
+    width: 60%;
+    padding: 25px;
+    gap: 25px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 15px;
+  }
+}
+
+.bottomSections {
+  grid-area: bottom;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 0 30px;
+  
+  @media (max-width: 1024px) {
+    gap: 25px;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 15px;
+    padding: 0 10px;
+  }
+}
+
+.footerSection {
+  .sectionTitle {
+    color: rgb(62, 50, 50);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+    text-align: left;
+    text-transform: capitalize;
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 15px;
+    
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 12px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 10px;
+    }
+    
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 10px;
+      border-radius: 12px;
+      background-color: #f81539;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      
+      @media (max-width: 480px) {
+        width: 3px;
+        height: 8px;
+      }
+    }
+  }
+  
+  .sectionText {
+    color: rgba(62, 50, 50, 0.75);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    text-align: justify;
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 13px;
+      line-height: 18px;
+      text-align: left;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.categoryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  .categoryItem {
+    color: rgba(62, 50, 50, 0.75);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    cursor: pointer;
+    
+    @media (max-width: 768px) {
+      font-size: 13px;
+      line-height: 18px;
+      margin-bottom: 6px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 5px;
+    }
+    
+    &:hover {
+      color: #f81539;
+    }
+  }
+}
+
+.commentsList {
+  .commentItem {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    
+    @media (max-width: 768px) {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+    
+    @media (max-width: 480px) {
+      padding: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .commentAuthor {
+      color: rgb(62, 50, 50);
+      font-size: 14px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+      
+      @media (max-width: 768px) {
+        font-size: 13px;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 12px;
+      }
+    }
+    
+    .commentText {
+      color: rgba(62, 50, 50, 0.75);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      margin: 0;
+      
+      @media (max-width: 768px) {
+        font-size: 11px;
+        line-height: 14px;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 10px;
+        line-height: 13px;
+      }
+    }
+  }
+}
+
+.instagramGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  
+  @media (max-width: 768px) {
+    gap: 6px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 4px;
+  }
+  
+  .instagramItem {
+    aspect-ratio: 1;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    
+    @media (max-width: 1024px) {
+      width: 80px;
+      height: 80px;
+    }
+    
+    @media (max-width: 768px) {
+      width: 70px;
+      height: 70px;
+      border-radius: 6px;
+    }
+    
+    @media (max-width: 480px) {
+      width: 60px;
+      height: 60px;
+      border-radius: 4px;
+    }
+
+    &:nth-child(1) { 
+      background-image: url('../../../../public/footerInstagramFollow/01_car.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(2) { 
+      background-image: url('../../../../public/footerInstagramFollow/02_dog.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(3) { 
+      background-image: url('../../../../public/footerInstagramFollow/03_phone.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(4) { 
+      background-image: url('../../../../public/footerInstagramFollow/04_food.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(5) { 
+      background-image: url('../../../../public/footerInstagramFollow/05_music.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(6) { 
+      background-image: url('../../../../public/footerInstagramFollow/06_dance.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(7) { 
+      background-image: url('../../../../public/footerInstagramFollow/07_dog.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(8) { 
+      background-image: url('../../../../public/footerInstagramFollow/08_dance.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(9) { 
+      background-image: url('../../../../public/footerInstagramFollow/09_sport.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+      
+      @media (max-width: 480px) {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+.newsletterSection {
+  .sectionTitle {
+    color: rgb(62, 50, 50);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+    text-align: left;
+    text-transform: capitalize;
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 15px;
+    
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 12px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 10px;
+    }
+    
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 10px;
+      border-radius: 12px;
+      background-color: #f81539;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      
+      @media (max-width: 480px) {
+        width: 3px;
+        height: 8px;
+      }
+    }
+  }
+  
+  .emailInput {
+    display: flex;
+    max-width: 300px;
+    position: relative;
+    
+    @media (max-width: 768px) {
+      max-width: 280px;
+    }
+    
+    @media (max-width: 480px) {
+      max-width: 100%;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .emailField {
+      flex: 1;
+      padding: 8px 12px 8px 36px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 14px;
+      outline: none;
+      background-color: #fff;
+      color: #222;
+      
+      @media (max-width: 768px) {
+        font-size: 13px;
+        padding: 7px 10px 7px 32px;
+      }
+      
+      @media (max-width: 480px) {
+        border-radius: 4px;
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+
+      &::placeholder {
+        color: #999;
+        opacity: 1;
+      }
+    }
+
+    .emailButton {
+      padding: 8px 12px;
+      background-color: #fff;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      color: #222;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+      
+      @media (max-width: 768px) {
+        padding: 7px 10px;
+        font-size: 14px;
+      }
+      
+      @media (max-width: 480px) {
+        border-radius: 4px;
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+  
+  .socialButtons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    
+    @media (max-width: 768px) {
+      gap: 10px;
+      margin-top: 12px;
+    }
+    
+    @media (max-width: 480px) {
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .socialButton {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      @media (max-width: 768px) {
+        padding: 7px 14px;
+        font-size: 13px;
+        border-radius: 18px;
+      }
+      
+      @media (max-width: 480px) {
+        padding: 6px 12px;
+        font-size: 12px;
+        border-radius: 16px;
+      }
+    }
+
+    .instagram {
+      background: linear-gradient(222.94deg, rgb(244, 92, 159) 5.441%, rgb(255, 117, 99) 73.435%) !important;
+      color: white !important;
+      
+      &:hover {
+        background: linear-gradient(222.94deg, rgb(200, 54, 80) 5.441%, rgb(255, 117, 99) 73.435%);
+      }
+    }
+
+    .twitter {
+      background: #1da1f2 !important;
+      color: white !important;
+      
+      &:hover {
+        background: #1a91da;
+      }
+    }
+  }
+}
+
+.footerBottom {
+  grid-area: footer-bottom;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  font-size: 12px;
+  color: rgba(62, 50, 50, 0.6);
+  margin: 0 20px;
+  
+  @media (max-width: 1024px) {
+    padding-top: 15px;
+    margin: 0 15px;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin: 0 10px;
+    padding-top: 15px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 8px;
+    margin: 0 5px;
+    padding-top: 10px;
+    font-size: 11px;
+  }
+  
+  .footerLinks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    @media (max-width: 768px) {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    @media (max-width: 480px) {
+      gap: 6px;
+    }
+    
+    .footerLink {
+      color: rgba(62, 50, 50, 0.6);
+      text-decoration: none;
+      
+      @media (max-width: 480px) {
+        font-size: 11px;
+      }
+      
+      &:hover {
+        color: #f81539;
+      }
+    }
+    
+    .separator {
+      color: rgba(62, 50, 50, 0.4);
+    }
+  }
+  
+  .copyright {
+    color: rgba(62, 50, 50, 0.6);
+    
+    @media (max-width: 480px) {
+      font-size: 11px;
+    }
+  }
+}
+// color: rgba(62, 50, 50, 0.6);
+//   }
+// }
+
+.socialButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  @media (max-width: 768px) {
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+}
+
+.instagram {
+  background: linear-gradient(222.94deg, rgb(244, 92, 159) 5.441%, rgb(255, 117, 99) 73.435%) !important;
+  color: white !important;
+  border-radius: 12px;
+  
+  @media (max-width: 768px) {
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 480px) {
+    border-radius: 8px;
+  }
+  
+  &:hover {
+    background: linear-gradient(222.94deg, rgb(200, 54, 80) 5.441%, rgb(255, 117, 99) 73.435%);
+  }
+}
+
+.twitter {
+  background: #1da1f2 !important;
+  color: white !important;
+  border-radius: 12px;
+  
+  @media (max-width: 768px) {
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 480px) {
+    border-radius: 8px;
+  }
+  
+  &:hover {
+    background: #1a91da;
+  }
+}
+
+.emailIcon {
+  color: #999;
+  font-size: 18px;
+  margin-left: -30px;
+  pointer-events: none;
+  
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-left: -28px;
+  }
+  
+  @media (max-width: 480px) {
+    display: none; // Hide icon on mobile for better UX
+  }
+}
+
+.emailInput {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    max-width: 280px;
+  }
+  
+  @media (max-width: 480px) {
+    max-width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .emailField {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    color: #222;
+    
+    @media (max-width: 768px) {
+      font-size: 13px;
+      padding: 7px 10px;
+    }
+    
+    @media (max-width: 480px) {
+      border-radius: 4px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+    
+    &::placeholder {
+      color: #999;
+      opacity: 1;
+    }
+  }
+}
+
+.iconWhite {
+  color: white; /* For icon fonts */
+  fill: white;  /* For SVG paths */
+  stroke: white; /* For SVG strokes if needed */
+}
